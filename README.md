@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# split-bill-app
+A simple and intuitive React application for splitting bills with friends and tracking who owes money to whom. Perfect for managing shared expenses with roommates, friends, or colleagues.
+🌟 Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Friend Management: Add and manage your friends list with profile pictures
+Bill Splitting: Split bills between you and any friend with automatic calculations
+Balance Tracking: Keep track of who owes money to whom with visual indicators
+Smart Calculations: Automatically calculate individual expenses based on total bill and payments
+Flexible Payment Options: Choose who pays the bill and update balances accordingly
+Clean UI: Simple, user-friendly interface with emoji icons and color-coded balances
 
-## Available Scripts
+🛠️ Technologies Used
 
-In the project directory, you can run:
+React 18+ with Hooks (useState)
+JavaScript ES6+
+CSS3 for styling
+Crypto API for unique ID generation
+Pravatar for random profile pictures
 
-### `npm start`
+🚀 Getting Started
+Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js (v14 or higher)
+npm or yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installation
 
-### `npm test`
+Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bashgit clone https://github.com/yourusername/split-bill-app.git
+cd split-bill-app
 
-### `npm run build`
+Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bashnpm install
+# or
+yarn install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bashnpm start
+# or
+yarn start
 
-### `npm run eject`
+Open http://localhost:3000 to view it in your browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+📱 How to Use
+Adding Friends
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Click the "Add friend" button
+Enter your friend's name
+Optionally customize their profile picture URL
+Click "Add" to add them to your friends list
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Splitting Bills
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Select a friend from your friends list by clicking "Select"
+Enter the total bill amount
+Enter how much you paid
+The app automatically calculates your friend's portion
+Choose who is paying the bill (you or your friend)
+Click "Split bill" to update balances
 
-## Learn More
+Understanding Balances
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Green text: Your friend owes you money
+Red text: You owe your friend money
+Gray text: You're even with your friend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📁 Project Structure
+src/
+├── App.js              # Main application component
+├── components/
+│   ├── Button.js       # Reusable button component
+│   ├── Friend.js       # Individual friend display
+│   ├── FriendsList.js  # Friends list container
+│   ├── FormAddFriend.js    # Add friend form
+│   └── FormSplitBill.js    # Bill splitting form
+├── index.js           # Application entry point
+└── styles.css         # Global styles
+🎯 Key Components
 
-### Code Splitting
+App: Main component managing application state and friend data
+FriendsList: Renders the list of all friends
+Friend: Individual friend component with balance display
+FormAddFriend: Form for adding new friends
+FormSplitBill: Form for splitting bills with calculations
+Button: Reusable button component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+💡 Features in Detail
+Balance System
+The app uses a simple balance system:
 
-### Analyzing the Bundle Size
+Positive balance: Friend owes you money
+Negative balance: You owe the friend money
+Zero balance: You're even
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Bill Splitting Logic
+When splitting a bill, the app calculates:
 
-### Making a Progressive Web App
+If you're paying: Friend's balance increases by their portion
+If friend is paying: Your balance decreases by your portion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Data Persistence
+Currently, data is stored in component state and resets on page refresh. Future versions could include:
 
-### Advanced Configuration
+Local storage persistence
+Database integration
+User accounts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🤝 Contributing
+Contributions are welcome! Here are some ways you can contribute:
 
-### Deployment
+Fork the repository
+Create a feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Potential Enhancements
 
-### `npm run build` fails to minify
+ Local storage for data persistence
+ Edit/delete friends functionality
+ Bill history tracking
+ Multiple currency support
+ Export functionality (PDF, CSV)
+ Dark mode theme
+ Mobile-responsive design improvements
+ Group bill splitting (multiple friends)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🐛 Known Issues
+
+Data doesn't persist after page refresh
+No validation for negative bill amounts
+Limited to two-person bill splits
