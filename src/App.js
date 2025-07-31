@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import FriendsList from "./FriendsList";
-import FormSplitBill from "./FormSplitBill";
-import Button from "./Button";
-import FormAddFriend from "./FormAddFriend";
+import FriendsList from "./components/FriendsList";
+import FormSplitBill from "./components/FormSplitBill";
+import Button from "./components/Button";
+import FormAddFriend from "./components/FormAddFriend";
 
 // Initial data for friends list - each friend has an id, name, image URL, and balance
 // Balance represents money owed: negative = you owe them, positive = they owe you, 0 = even
